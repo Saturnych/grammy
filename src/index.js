@@ -7,7 +7,7 @@ config.debug = (config.env.NODE_ENV==='production')?false:true;
 
 globalThis.exitcode = 0;
 
-const { runGram } = require('./gramclient');
+const { runGram } = require('./grammy');
 
 const runMain = async () => {
   try {
