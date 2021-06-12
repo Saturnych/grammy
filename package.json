@@ -1,0 +1,51 @@
+{
+  "name": "grammy",
+  "version": "0.0.1",
+  "description": "gram.js automatic bot & api clients with monitoring",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index",
+    "start": "nodemon --verbose --max_old_space_size=8196 --stack-size=1024 src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pm2": "pm2 start src/index.js --name grammy --max-memory-restart 250M --node-args='--max_old_space_size=8196' -f",
+    "pm": "pm2 start ecosystem.config.js"
+  },
+  "args": [
+    "--max_old_space_size=8196 --stack-size=1024"
+  ],
+  "nodemonConfig": {
+    "legacyWatch": true,
+    "verbose": true,
+    "ignore": [
+      "_authdata",
+      "logs",
+      "node_modules"
+    ],
+    "ignoreRoot": [
+      "_authdata",
+      "logs",
+      "node_modules"
+    ],
+    "delay": "2500"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saturnych/grammy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Saturnych/grammy/issues"
+  },
+  "homepage": "https://saturnych.ru",
+  "author": "Denis Glebko",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "input": "^1.0.1",
+    "node-localstorage": "^2.2.1",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7",
+    "pm2": "^5.1.0",
+    "store2": "^2.12.0",
+    "telegram": "^1.6.12"
+  }
+}
